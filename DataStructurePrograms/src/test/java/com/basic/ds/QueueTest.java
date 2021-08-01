@@ -41,6 +41,5 @@ public class QueueTest {
 		System.out.println(queue.front());
 		System.out.println(queue.rear());
 		assertEquals(7, queue.dequeue());
-		
 		}
 }
