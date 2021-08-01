@@ -1,72 +1,83 @@
 package com.basic.ds;
 
+import com.basic.ds.LinkedList.Node;
+
 public class CircularLinkedList<T> {
 
-	Node node;
+	Node tempNode;
+	Node headNode;
 
 	public void insert(T data) {
 		Node newNode = new Node(data);
-		newNode.next = null;
-		if (this.node == null) {
-			this.node = newNode;
-			return;
+		if (this.headNode == null) {
+			this.headNode = newNode;
 		} else {
-			Node tempNode = this.node;
-			while (tempNode.next != null) {
-				tempNode = tempNode.next;
-			}
 			tempNode.next = newNode;
 		}
+		tempNode = newNode;
+		tempNode.next = headNode;
 	}
 
 	public void removeData(T data) {
-		Node tempNode = this.node;
+		if (headNode != null && headNode.data == data) {
+			headNode = tempNode.next = headNode.next;
+			return;
+		}
+		
+		Node currentNode = this.headNode;
 		Node prevNode = null;
-		if (tempNode != null && tempNode.data == data) {
-			node = tempNode.next;
+		while (headNode.next != null && !currentNode.next.equals(headNode) && currentNode.data != data) {
+			prevNode = currentNode;
+			currentNode = currentNode.next;
+		}
+		if ( currentNode.data != data) {
+			System.out.println("cannot find the data :: " + data);
 			return;
 		}
-		while (tempNode != null && !data.equals(tempNode.data)) {
-			prevNode = tempNode;
-			tempNode = tempNode.next;
-		}
-		if (tempNode == null)
-			return;
-		prevNode.next = tempNode.next;
+		prevNode.next = currentNode.next;
 	}
 
 	public void removePosition(int position) {
-		Node tempNode = this.node;
+		int count=0;
+		if(headNode == null) {
+			System.out.println("Operation not possible");
+		}
+		if (headNode != null && position == count) {
+			headNode = tempNode.next = headNode.next;
+			return;
+		}
+		
+		Node currentNode = this.headNode;
 		Node prevNode = null;
-		int count = 0;
-		if (tempNode != null && count == position) {
-			node = tempNode.next;
+		while (headNode.next != null && !currentNode.next.equals(headNode) && position != count) {
+			count++;
+			prevNode = currentNode;
+			currentNode = currentNode.next;
+		}
+		if ( position != count) {
+			System.out.println("Invalid position :: " + position);
 			return;
 		}
-		while (tempNode != null && position != count) {
-			count ++;
-			prevNode = tempNode;
-			tempNode = tempNode.next;
-		}
-		if (tempNode == null)
-			return;
-		prevNode.next = tempNode.next;
+		prevNode.next = currentNode.next;
 	}
 
 	public void printList() {
-		Node tempNode = this.node;
-		while (tempNode.next != null) {
-			System.out.print(tempNode.data + " --> ");
-			tempNode = tempNode.next;
+		Node printNode = this.headNode;
+		while (headNode.next != null && !printNode.next.equals(headNode)) {
+			System.out.print(printNode.data + " --> ");
+			printNode = printNode.next;
 		}
-		System.out.println(tempNode.data + " --> null");
+		System.out.println(printNode.data + " --> head node [" + printNode.next.data + "]");
 	}
 
 	public int size() {
 		int count = 0;
-		Node tempNode = this.node;
-		while (tempNode.next != null) {
-			tempNode = tempNode.next;
+		Node printNode = this.headNode;
+		if (headNode == null) {
+			return 0;
+		}
+		while (headNode.next != null && !printNode.next.equals(headNode)) {
+			printNode = printNode.next;
 			count++;
 		}
 		count++;

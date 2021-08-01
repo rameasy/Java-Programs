@@ -9,18 +9,13 @@ public class DoublyCircularLinkedListTest {
 	@Test
 	public void insertTest() {
 
-		DoublyLinkedList dll = new DoublyLinkedList();
-		dll.insert(123);
-		dll.insert("abc");
-		dll.insert(1.23d);
-		dll.insert(6);
-		dll.printList();
-		assertEquals(4, dll.size());
-		DoublyLinkedList<Integer> dllI = new DoublyLinkedList<Integer>();
-		dllI.insert(13);
-		dllI.insert(52);
-		dllI.printList();
-		assertEquals(2, dllI.size());
+		DoublyCircularLinkedList<Integer> dcll = new DoublyCircularLinkedList<>();
+		dcll.insert(23);
+		dcll.insert(68);
+		dcll.insert(8);
+		dcll.insert(127);
+		dcll.printList();
+		assertEquals(4, dcll.size());
 
 	}
 
@@ -28,28 +23,42 @@ public class DoublyCircularLinkedListTest {
 	public void removeDataTest() {
 		//Added the test cases for positive testing 
 		//Code change required for negative testing
-		DoublyLinkedList dll = new DoublyLinkedList();
-		dll.insert(123);
-		dll.insert("abc");
-		dll.insert(1.23d);
-		dll.insert(6);
-		dll.removeData(123);
-		dll.printList();
-		assertEquals(3, dll.size());
+		DoublyCircularLinkedList<Integer> dcll = new DoublyCircularLinkedList<>();
+		dcll.insert(23);
+		dcll.insert(68);
+		dcll.insert(8);
+		dcll.insert(127);
+		dcll.printList();
+		dcll.removeData(23);
+		dcll.printList();
+		assertEquals(3, dcll.size());
+		dcll.removeData(83);
+		dcll.printList();
+		assertEquals(3, dcll.size());
+		dcll.removeData(127);
+		dcll.printList();
+		assertEquals(2, dcll.size());
 	}
 
 	@Test
 	public void removePositionTest() {
 		//Added the test cases for positive testing 
 		//Code change required for negative testing
-		DoublyLinkedList dll = new DoublyLinkedList();
-		dll.insert(123);
-		dll.insert("abc");
-		dll.insert(1.23d);
-		dll.insert(6);
-		dll.removePosition(3);
-		dll.printList();
-		assertEquals(3, dll.size());
+		DoublyCircularLinkedList<Integer> dcll = new DoublyCircularLinkedList<>();
+		dcll.insert(65);
+		dcll.insert(34);
+		dcll.insert(80);
+		dcll.insert(17);
+		dcll.printList();
+		dcll.removePosition(3);
+		dcll.printList();
+		assertEquals(3, dcll.size());
+		dcll.removePosition(3);
+		dcll.printList();
+		assertEquals(3, dcll.size());
+		dcll.removePosition(1);
+		dcll.printList();
+		assertEquals(2, dcll.size());
 
 	}
 }
