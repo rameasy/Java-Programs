@@ -1,6 +1,6 @@
-package com.basic.ds;
+package com.basic.ds.adt;
 
-public class DoublyCircularLinkedList<T> {
+public class DoublyLinkedList<T> {
 
 	Node headNode, tailNode;
 
@@ -13,7 +13,7 @@ public class DoublyCircularLinkedList<T> {
 			tailNode.next = node;
 			node.prev = tailNode;
 			tailNode = node;
-			tailNode.next = headNode;
+			tailNode.next = null;
 		}
 	}
 
@@ -21,28 +21,21 @@ public class DoublyCircularLinkedList<T> {
 		Node currentNode = headNode;
 		Node prevNode = null;
 		if (headNode != null && headNode.data == data) {
-			if (headNode.next == tailNode) {
+			if (headNode.next == null) {
 				headNode = tailNode = null;
 			} else {
-				tailNode.next = headNode.next;
-				headNode.next.prev = tailNode;
 				headNode = headNode.next;
 			}
-			return;
 		}
-		while (currentNode != null && currentNode.data != data && currentNode.next != headNode) {
+		while (currentNode != null && currentNode.data != data) {
+			// System.out.print(currentNode.data + " --> ");
 			prevNode = currentNode;
 			currentNode = currentNode.next;
-		}
-		if(currentNode.next == headNode && currentNode.data != data) {
-			System.out.println("Not able to identify the data :: " + data);
-			return;
 		}
 		if (currentNode == null)
 			return;
 		if (prevNode != null) {
 			prevNode.next = currentNode.next;
-			currentNode.next.prev = prevNode;
 		} else {
 			currentNode = currentNode.next;
 		}
@@ -52,33 +45,26 @@ public class DoublyCircularLinkedList<T> {
 		Node currentNode = headNode;
 		Node prevNode = null;
 		int count = 0;
-		if (headNode != null && count == position) {
-			if (headNode.next == tailNode) {
+		if (headNode != null && position == 0) {
+			if (headNode.next == null) {
 				headNode = tailNode = null;
 			} else {
-				tailNode.next = headNode.next;
-				headNode.next.prev = tailNode;
 				headNode = headNode.next;
 			}
-			return;
 		}
-		while (currentNode != null && count != position && currentNode.next != headNode) {
+		while (currentNode != null && position != count) {
+			count++;
 			prevNode = currentNode;
 			currentNode = currentNode.next;
-			count++;
-		}
-		if(currentNode.next == headNode && count != position) {
-			System.out.println("Invalid position :: " + position);
-			return;
 		}
 		if (currentNode == null)
 			return;
 		if (prevNode != null) {
 			prevNode.next = currentNode.next;
-			currentNode.next.prev = prevNode;
 		} else {
 			currentNode = currentNode.next;
-		}	}
+		}
+	}
 
 	public void printList() {
 		if (headNode != null) {
@@ -87,11 +73,11 @@ public class DoublyCircularLinkedList<T> {
 				return;
 			}
 			Node node = headNode;
-			while (node.next != null && node.next != headNode) {
+			while (node.next != null) {
 				System.out.print(node.data + " --> ");
 				node = node.next;
 			}
-			System.out.println(node.data + " -->  headNode[" + node.next.data + "]");
+			System.out.println(node.data);
 		} else {
 			System.out.println(" --> null");
 		}
@@ -105,7 +91,7 @@ public class DoublyCircularLinkedList<T> {
 				return 1;
 			}
 			Node node = headNode;
-			while (node.next != null && node.next != headNode) {
+			while (node.next != null) {
 				count++;
 				node = node.next;
 			}

@@ -1,4 +1,4 @@
-package com.basic.ds;
+package com.basic.ds.adt;
 
 public class Queue<T> {
 	private int size, front, rear, queueSize;

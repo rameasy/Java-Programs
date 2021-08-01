@@ -1,4 +1,4 @@
-package com.basic.ds;
+package com.basic.ds.adt;
 
 import static org.junit.Assert.assertEquals;
 

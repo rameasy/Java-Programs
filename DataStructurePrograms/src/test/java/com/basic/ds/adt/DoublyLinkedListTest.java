@@ -1,8 +1,10 @@
-package com.basic.ds;
+package com.basic.ds.adt;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
+
+import com.basic.ds.adt.DoublyLinkedList;
 
 public class DoublyLinkedListTest {
 

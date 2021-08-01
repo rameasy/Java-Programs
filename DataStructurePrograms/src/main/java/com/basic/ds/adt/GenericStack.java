@@ -1,4 +1,4 @@
-package com.basic.ds;
+package com.basic.ds.adt;
 
 /**
  * Implementing the Stack data structure

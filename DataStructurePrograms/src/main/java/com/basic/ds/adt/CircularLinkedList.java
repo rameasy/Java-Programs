@@ -1,6 +1,4 @@
-package com.basic.ds;
-
-import com.basic.ds.LinkedList.Node;
+package com.basic.ds.adt;
 
 public class CircularLinkedList<T> {
 
