@@ -2,7 +2,7 @@ package com.coding.adt.arrays;
 
 /**
  * Find the majority element. In this problem, majority element is defined as
- * the number that appears more than n/2 times in an arrayay of numbers.
+ * the number that appears more than n/2 times in an array of numbers.
  *
  */
 public class FindMajorityElement {
