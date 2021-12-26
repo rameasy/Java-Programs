@@ -16,7 +16,7 @@ public class TeamLeader extends LeaveHandler {
 				return "You employee Tier level is too low for request " + leave.getNumberOfDays() + " days";
 			}
 		} else {
-			return superVisor.applyLeave(leave);
+			return supervisor.applyLeave(leave);
 		}
 	}
 }

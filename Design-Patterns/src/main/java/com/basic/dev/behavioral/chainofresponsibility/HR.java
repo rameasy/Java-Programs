@@ -15,7 +15,7 @@ public class HR extends LeaveHandler {
 				return "Your leave request has been DENIED by HR";
 			}
 		} else {
-			return superVisor.applyLeave(leave);
+			return supervisor.applyLeave(leave);
 		}
 	}
 }
