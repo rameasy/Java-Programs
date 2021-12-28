@@ -1,8 +1,10 @@
-package com.coding.adt.arrays;
+package com.coding.dt.arrays;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
+
+import com.coding.dt.arrays.FindMajorityElement;
 
 public class FindMajorityElementTest {
 	@Test

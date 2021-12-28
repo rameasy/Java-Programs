@@ -1,4 +1,4 @@
-package com.coding.adt.arrays;
+package com.coding.dt.arrays;
 
 /**
  * Find the maximum sum of a continuous subsequence in an array of integers.

@@ -1,4 +1,4 @@
-package com.coding.adt.arrays;
+package com.coding.dt.arrays;
 
 /**
  * Find the majority element. In this problem, majority element is defined as
