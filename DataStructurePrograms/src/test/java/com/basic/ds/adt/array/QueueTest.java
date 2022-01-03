@@ -1,15 +1,22 @@
-package com.basic.ds.adt;
+package com.basic.ds.adt.array;
 
 import static org.junit.Assert.assertEquals;
 
-import org.junit.BeforeClass;
 import org.junit.Test;
 
+/**
+ * This is test class for Queue class.
+ * 
+ * @author rameasy@gmail.com
+ *
+ */
 public class QueueTest {
-	
+	/**
+	 * This is a test method for enqueue method.
+	 */
 	@Test
 	public void enqueueTest() {
-		Queue queue = new Queue(5);
+		Queue<Integer> queue = new Queue<>(5);
 		queue.enqueue(5);
 		assertEquals(5, queue.rear());
 		assertEquals(5, queue.front());
@@ -21,12 +28,14 @@ public class QueueTest {
 		queue.enqueue(7);
 		assertEquals(5, queue.front());
 		assertEquals(7, queue.rear());
-		
 	}
-	
+
+	/**
+	 * This is a test method for dequeue method.
+	 */
 	@Test
 	public void dequeueTest() {
-		Queue queue = new Queue(5);
+		Queue<Integer> queue = new Queue<>(5);
 		queue.enqueue(5);
 		queue.enqueue(2);
 		queue.enqueue(4);
@@ -41,5 +50,5 @@ public class QueueTest {
 		System.out.println(queue.front());
 		System.out.println(queue.rear());
 		assertEquals(7, queue.dequeue());
-		}
+	}
 }

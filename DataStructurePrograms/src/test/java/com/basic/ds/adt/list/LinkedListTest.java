@@ -1,11 +1,19 @@
-package com.basic.ds.adt;
+package com.basic.ds.adt.list;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+/**
+ * This is test class for LinkedList class.
+ * 
+ * @author rameasy@gmail.com
+ *
+ */
 public class LinkedListTest {
-
+	/**
+	 * This is a test method for insert method.
+	 */
 	@Test
 	public void insertTest() {
 		LinkedList linkedList = new LinkedList();
@@ -17,10 +25,13 @@ public class LinkedListTest {
 		assertEquals(4, linkedList.size());
 	}
 
+	/**
+	 * This is a test method for removeData method.
+	 */
 	@Test
 	public void removeDataTest() {
-		//Added the test cases for positive testing 
-		//Code change required for negative testing
+		// Added the test cases for positive testing
+		// Code change required for negative testing
 		LinkedList linkedList = new LinkedList();
 		linkedList.insert(123);
 		linkedList.insert("abc");
@@ -34,10 +45,13 @@ public class LinkedListTest {
 
 	}
 
+	/**
+	 * This is a test method for removePosition method.
+	 */
 	@Test
 	public void removePositionTest() {
-		//Added the test cases for positive testing 
-		//Code change required for negative testing
+		// Added the test cases for positive testing
+		// Code change required for negative testing
 		LinkedList linkedList = new LinkedList();
 		linkedList.insert(123);
 		linkedList.insert("abc");

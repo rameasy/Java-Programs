@@ -4,9 +4,16 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import com.coding.dt.arrays.FindMajorityElement;
-
+/**
+ * This is test class for FindMajorityElement class.
+ * 
+ * @author rameasy@gmail.com
+ *
+ */
 public class FindMajorityElementTest {
+	/**
+	 * This method test the findMajCandidate method with success criteria.
+	 */
 	@Test
 	public void findMajCandidate_Success() {
 		FindMajorityElement findMajorityElement = new FindMajorityElement();
@@ -14,6 +21,10 @@ public class FindMajorityElementTest {
 		int maj = findMajorityElement.getMajorityElement(arr);
 		assertEquals(3, maj);
 	}
+
+	/**
+	 * This method test the findMajCandidate method with failure criteria.
+	 */
 	@Test
 	public void findMajCandidate_Failure() {
 		FindMajorityElement findMajorityElement = new FindMajorityElement();

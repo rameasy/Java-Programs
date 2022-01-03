@@ -3,9 +3,16 @@ package com.basic.ds.sorting;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
-
+/**
+ * This is test class for SelectionSort class.
+ * 
+ * @author rameasy@gmail.com
+ *
+ */
 public class SelectionSortTest {
-
+	/**
+	 * This is a test method for selectionSort method.
+	 */
 	@Test
 	public void selectionSortTest() {
 		int[] inputArray = { 23, 6, 43, 98, 79, 2, 34, 93, 21, 15, 68, 55 };

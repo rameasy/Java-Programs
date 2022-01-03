@@ -7,15 +7,15 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**
- * In a Binary Search Tree find the total number of elements in a given range of
- * numbers.
+ * Problem statement: In a Binary Search Tree find the total number of elements
+ * in a given range of numbers. Test class for BinarySearchTree
  * 
  * @author rameasy
  *
- * @param <T>
  */
 public class BinarySearchTreeTest {
-	private static BinarySearchTree tree ;
+	private static BinarySearchTree tree;
+
 	@BeforeClass
 	public static void setUp() {
 		tree = new BinarySearchTree();
@@ -27,10 +27,12 @@ public class BinarySearchTreeTest {
 		tree.insert(6);
 		tree.insert(8);
 	}
+
 	@Test
 	public void countNumbersInRange_Success() {
 		assertEquals(2, tree.countNumbersInRange(tree.root, 3, 7));
 	}
+
 	@Test
 	public void countNumbersInRange_Failur() {
 		assertNotEquals(5, tree.countNumbersInRange(tree.root, 3, 7));

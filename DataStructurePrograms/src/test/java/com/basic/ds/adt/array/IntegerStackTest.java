@@ -1,13 +1,22 @@
-package com.basic.ds.adt;
+package com.basic.ds.adt.array;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+/**
+ * This is test class for IntegerStack class.
+ * 
+ * @author rameasy@gmail.com
+ *
+ */
 public class IntegerStackTest {
 	static IntegerStack stack = new IntegerStack(5);
 
+	/**
+	 * This is a setup method which gets loaded with the class.
+	 */
 	@BeforeClass
 	public static void initialize() {
 		stack.push(10);
@@ -17,7 +26,9 @@ public class IntegerStackTest {
 		stack.push(50);
 	}
 
-	@SuppressWarnings("deprecation")
+	/**
+	 * This is a test method for push method.
+	 */
 	@Test
 	public void pushTest() {
 		IntegerStack customStack = new IntegerStack(5);
@@ -30,23 +41,27 @@ public class IntegerStackTest {
 		defaultStack.push(10);
 		defaultStack.push(20);
 		defaultStack.push(30);
-		assertEquals(new Integer(5), customStack.size()); // custom size
-		assertEquals(new Integer(8), defaultStack.size());// default size
+		assertEquals(Integer.valueOf(5), customStack.size()); // custom size
+		assertEquals(Integer.valueOf(8), defaultStack.size());// default size
 		customStack.push(60);
-		assertEquals(new Integer(10), customStack.size()); // increased capacity size
+		assertEquals(Integer.valueOf(10), customStack.size()); // increased capacity size
 	}
 
-	@SuppressWarnings("deprecation")
+	/**
+	 * This is a test method for pop method.
+	 */
 	@Test
 	public void popTest() {
-		assertEquals(new Integer(50), stack.pop());
-		assertEquals(new Integer(40), stack.pop());
+		assertEquals(Integer.valueOf(50), stack.pop());
+		assertEquals(Integer.valueOf(40), stack.pop());
 	}
 
-	@SuppressWarnings("deprecation")
+	/**
+	 * This is a test method for peek method.
+	 */
 	@Test
 	public void peek() {
-		assertEquals(new Integer(30), stack.peek());
+		assertEquals(Integer.valueOf(30), stack.peek());
 	}
 
 }

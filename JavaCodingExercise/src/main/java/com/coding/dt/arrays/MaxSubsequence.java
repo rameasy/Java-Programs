@@ -1,11 +1,19 @@
 package com.coding.dt.arrays;
 
 /**
- * Find the maximum sum of a continuous subsequence in an array of integers.
+ * Problem statement: Find the maximum sum of a continuous subsequence in an
+ * array of integers.
  *
  */
 public class MaxSubsequence {
 
+	/**
+	 * This method returns the total value of the subsequent numbers in a given
+	 * array.
+	 * 
+	 * @param array
+	 * @return
+	 */
 	public int getSubsequentTotal(int[] array) {
 		if (array == null || array.length == 0) {
 			return Integer.MIN_VALUE;

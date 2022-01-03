@@ -1,16 +1,26 @@
-package com.basic.ds.adt;
+package com.basic.ds.adt.array;
 
 /**
- * Implementing the Stack data structure
+ * Implementing the Stack data structure.
  * 
+ * @author rameasy@gmail.com
  */
 public class IntegerStack {
+	/**
+	 * Stores the size of the stack.
+	 */
 	private int size = 0;
+	/**
+	 * Default capacity of the stack.
+	 */
 	private static final int DEFAULT_CAPACITY = 8;
+	/**
+	 * Stores the values in the stack.
+	 */
 	private Integer data[];
 
 	/**
-	 * Default constructor
+	 * Default constructor.
 	 */
 	public IntegerStack() {
 		data = new Integer[DEFAULT_CAPACITY];

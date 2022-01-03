@@ -1,20 +1,33 @@
 package com.coding.dt.tree.binarytree;
 
 /**
- * Given two binary trees find if they are equal (have the same content and
- * structure).
+ * Problem statement: Given two binary trees find if they are equal (have the
+ * same content and structure).
  * 
- * @author rameasy
+ * @author rameasy@gmail.com
  *
  * @param <T>
  */
 public class BinaryTree {
+	/**
+	 * root element {@link TreeNode}
+	 */
 	TreeNode root;
 
+	/**
+	 * Default constructor.
+	 */
 	BinaryTree() {
 		root = null;
 	}
 
+	/**
+	 * This method compares two tree objects and returns true if they are same.
+	 * 
+	 * @param tree1
+	 * @param tree2
+	 * @return
+	 */
 	public boolean compareTwoTreeData(TreeNode tree1, TreeNode tree2) {
 		if (tree1 == null && tree2 == null) {
 			return true;

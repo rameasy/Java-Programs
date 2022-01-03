@@ -4,11 +4,18 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import com.coding.dt.arrays.MaxSubsequence;
-
+/**
+ * This is test class for MaxSubsequnce class.
+ * 
+ * @author rameasy@gmail.com
+ *
+ */
 public class MaxSubsequenceTest {
+	/**
+	 * This method test the getSubsequentTotal method.
+	 */
 	@Test
-	public void getSubsequentTotal() {
+	public void getSubsequentTotalTest() {
 		MaxSubsequence maxSubsequence = new MaxSubsequence();
 		int[] arr = new int[] { -1, 6, -8, 1, 4 };
 		int maj = maxSubsequence.getSubsequentTotal(arr);
