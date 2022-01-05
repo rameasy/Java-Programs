@@ -5,6 +5,14 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+/**
+ * This class demonstrates the Java 10 feature: copyOf static method in
+ * collection classes & orElseThrow in Optional class. 
+ * When called with the
+ * collection it returns a unmodifiable collection type.
+ * 
+ * @author rameasy@gmail.com
+ */
 public class CopyOf {
 	public static void main(String[] args) {
 
@@ -24,15 +32,15 @@ public class CopyOf {
 		System.out.println(actors); // prints [Jack Nicholson, Marlon Brando, Robert De Niro]
 		System.out.println(copyOfActors); // prints [Jack Nicholson, Marlon Brando]
 
-		String str = "";
-		Optional<String> name = Optional.ofNullable(str);
-		// New API added - is preferred option then get() method
-		name.orElseThrow(); // same as name.get()
-
 		// New API added - Collectors.toUnmodifiableList
-		List<String> collect = actors.stream().collect(Collectors.toUnmodifiableList());
+		//List<String> collect = actors.stream().collect(Collectors.toUnmodifiableList());
 		// collect.add("Tom Hanks"); // Will generate an
 		// UnsupportedOperationException
 
+		String str = null;
+		Optional<String> name = Optional.ofNullable(str);
+		// New API added - is preferred option then get() method
+		// when null throws NoSuchElementException
+		name.orElseThrow(); // same as name.get()
 	}
 }

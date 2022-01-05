@@ -102,6 +102,26 @@ public class LinkedList<T> {
 		count++;
 		return count;
 	}
+
+	/**
+	 * This method sorts the linked list in ascending order.
+	 */
+	@SuppressWarnings("unchecked")
+	public void sort() {
+		LinkedListNode<Integer> currentNode = (LinkedListNode<Integer>) this.node;
+		while (currentNode != null) {
+			LinkedListNode<Integer> nextNode = currentNode.next;
+			while (nextNode != null) {
+				if (currentNode.data > nextNode.data) {
+					Integer temp = currentNode.data;
+					currentNode.data = nextNode.data;
+					nextNode.data = temp;
+				}
+				nextNode = nextNode.next;
+			}
+			currentNode = currentNode.next;
+		}
+	}
 }
 
 /**

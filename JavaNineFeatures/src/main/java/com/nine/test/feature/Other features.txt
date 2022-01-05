@@ -1,0 +1,21 @@
+JShell - REPL stands for Read-Eval-Print Loop. With JShell, java has REPL capability. Using REPL, we can code and test java based
+logic without compiling using javac and see the result of calculations directly.
+
+Java docs - In java 9, we can generate documentation in html 5 format by using -html5 option in command line arguments.
+			javadoc -d C:/JAVA -html5 Tester.java
+
+Multirelease JAR - A new feature is introduced where a jar format has been enhanced to have different versions of java class
+			 or resources can be maintained and used as per the platform.In JAR, a file MANIFEST.MF file has a entry 
+			 Multi-Release: true in its main section. META-INF directory also contains a versions subdirectory whose 
+			 subdirectories (starting with 9 for Java 9 ) store version-specific classes and resource files.
+			EG: 
+			 C:\test > javac --release 9 java/com/example/Tester.java
+			 C:\test > javac --release 7 java/com/example/Tester.java
+			 C:\test > jar -c -f test.jar -C java7 . --release 9 -C java9.
+			 With JDK 7 version:
+			 C:\test > java -cp test.jar com.example.Tester
+						Inside Java 7
+			 With JDK 9 version:
+			 C:\test > java -cp test.jar com.example.Tester
+						Inside Java 9
+						

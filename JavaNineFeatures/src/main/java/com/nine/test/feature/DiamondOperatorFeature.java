@@ -1,5 +1,13 @@
 package com.nine.test.feature;
 
+/**
+ * This class demonstrates the Java 9 feature: Diamond Operator. Diamond
+ * operator was introduced in java 7 to make code more readable but it could not
+ * be used with Anonymous inner classes. In java 9, it can be used with
+ * annonymous class as well to simplify code and improves readability.
+ * 
+ * @author rameasy@gmail.com
+ */
 public class DiamondOperatorFeature {
 
 	public static void main(String[] args) {

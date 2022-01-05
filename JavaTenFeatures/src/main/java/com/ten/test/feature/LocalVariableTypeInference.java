@@ -1,7 +1,11 @@
 package com.ten.test.feature;
 
 import java.util.List;
-
+/**
+ * This class demonstrates the Java 10 feature of having var keyword and where it can be used.
+ * 
+ * @author rameasy@gmail.com
+ */
 public class LocalVariableTypeInference {
 	public static void main(String args[]) {
 		var numbers = List.of(1, 2, 3, 4, 5); // inferred value ArrayList<Integer>

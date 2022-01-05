@@ -62,4 +62,25 @@ public class LinkedListTest {
 		assertEquals(3, linkedList.size());
 
 	}
+	/**
+	 * This is a test method for sort method.
+	 */
+	@Test
+	public void sortTest() {
+		// Added the test cases for positive testing
+		// Code change required for negative testing
+		LinkedList<Integer> linkedList = new LinkedList<>();
+		linkedList.insert(10);
+		linkedList.sort();
+		linkedList.printList();
+		assertEquals(1, linkedList.size());
+		linkedList.insert(6);
+		linkedList.insert(14);
+		linkedList.insert(3);
+		linkedList.insert(9);
+		linkedList.sort();
+		linkedList.printList();
+		assertEquals(5, linkedList.size());
+
+	}
 }

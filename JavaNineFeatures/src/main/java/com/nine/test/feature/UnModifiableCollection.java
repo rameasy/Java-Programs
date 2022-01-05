@@ -1,10 +1,13 @@
 package com.nine.test.feature;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
-
+/**
+ * This class demonstrates the Java 9 feature UnModifiable Collection objects.
+ * 
+ * @author rameasy@gmail.com
+ */
 public class UnModifiableCollection {
 	public static void main(String[] args) {
 		List<Integer> myList1 = new ArrayList<>();
@@ -14,9 +17,10 @@ public class UnModifiableCollection {
 		myList1.add(7);
 		List<Integer> unmyList = Collections.unmodifiableList(myList1);
 		myList1.add(9);
+		//unmyList.add(10); //Exception in thread "main" java.lang.UnsupportedOperationException
 		System.out.println(unmyList);// [3, 5, 6, 7, 9]
 		List<Integer> ofMyList = List.of(1,2,3,4,5,6,7,8,9,10,11, 12, 13, 14, 15, 16);
-		//ofMyList.remove(2);
+		//ofMyList.remove(2); //Exception in thread "main" java.lang.UnsupportedOperationException
 		System.out.println(ofMyList);
 
 		Student s1 = new Student(101, "AAAA");
