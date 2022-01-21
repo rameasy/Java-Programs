@@ -14,7 +14,7 @@ public class LinkedListTest {
 	/**
 	 * This is a test method for insert method.
 	 */
-	@Test
+	//@Test
 	public void insertTest() {
 		LinkedList linkedList = new LinkedList();
 		linkedList.insert(123);
@@ -28,7 +28,7 @@ public class LinkedListTest {
 	/**
 	 * This is a test method for removeData method.
 	 */
-	@Test
+	//@Test
 	public void removeDataTest() {
 		// Added the test cases for positive testing
 		// Code change required for negative testing
@@ -48,7 +48,7 @@ public class LinkedListTest {
 	/**
 	 * This is a test method for removePosition method.
 	 */
-	@Test
+	//@Test
 	public void removePositionTest() {
 		// Added the test cases for positive testing
 		// Code change required for negative testing
@@ -65,7 +65,7 @@ public class LinkedListTest {
 	/**
 	 * This is a test method for sort method.
 	 */
-	@Test
+	//@Test
 	public void sortTest() {
 		// Added the test cases for positive testing
 		// Code change required for negative testing
@@ -81,6 +81,24 @@ public class LinkedListTest {
 		linkedList.sort();
 		linkedList.printList();
 		assertEquals(5, linkedList.size());
-
+		linkedList.printReverse(linkedList.node);
+	}
+	
+	/**
+	 * This is a test method for sort method.
+	 */
+	@Test
+	public void removeDuplicatesTest() {
+		
+		LinkedList<Integer> linkedList = new LinkedList<>();
+		linkedList.insert(10);
+		linkedList.insert(14);
+		linkedList.insert(14);
+		linkedList.insert(3);
+		linkedList.insert(3);
+		linkedList.sort();
+		System.out.println("removeDuplicatesTest result");
+		linkedList.removeDuplicates(linkedList.node);
+		assertEquals(5, linkedList.size());
 	}
 }

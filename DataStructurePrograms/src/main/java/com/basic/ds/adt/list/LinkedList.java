@@ -122,6 +122,38 @@ public class LinkedList<T> {
 			currentNode = currentNode.next;
 		}
 	}
+	/**
+	 * This method prints the data in linked list reversely.
+	 */
+	@SuppressWarnings("unchecked")
+	public void printReverse(LinkedListNode llNode) {
+		if(llNode.next != null) {
+			printReverse(llNode.next);
+		}
+		if(llNode.next == null) {
+			System.out.print("Null<--"+ llNode.data);
+		} else {
+			System.out.print("<--" + llNode.data);
+		}
+	}
+	
+	public void removeDuplicates(LinkedListNode<Integer> llist) {
+        int data =Integer.MIN_VALUE;
+        LinkedListNode<Integer> head = new LinkedListNode<>(-1);
+        LinkedListNode<Integer> prev = null;
+        head.next = llist;
+        while(head != null) {
+            if(head.data == data)  {
+                prev.next = head.next;
+                head = llist.next;
+            } else {
+                prev = head;
+                data = head.data; 
+                head = head.next;
+            }
+        }
+        printList();
+    }
 }
 
 /**
