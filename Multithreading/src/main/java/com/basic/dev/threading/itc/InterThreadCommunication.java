@@ -71,7 +71,7 @@ class Consumer implements Runnable {
 				System.out.println("consuming : " + number);
 				sharedQ.notify();
 				// termination condition
-				if (number == 3) {
+				if (number == 1) {
 					break;
 				}
 			}
