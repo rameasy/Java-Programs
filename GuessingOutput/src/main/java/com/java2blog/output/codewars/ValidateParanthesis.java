@@ -8,9 +8,10 @@ public class ValidateParanthesis {
 		int count = 0;
 		char[] charArray = param.toCharArray();
 		for (int i = 0; i < charArray.length; i++) {
-			if (charArray[i] == '(') {
+			char value = charArray[i];
+			if (value == '(' || value == '{' || value == '[') {
 				count++;
-			} else if (charArray[i] == ')') {
+			} else if (value == ')' || value == '}' || value == ']') {
 				count--;
 			}
 			if (count < 0) {

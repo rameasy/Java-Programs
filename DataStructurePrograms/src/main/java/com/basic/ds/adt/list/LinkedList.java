@@ -137,6 +137,9 @@ public class LinkedList<T> {
 		}
 	}
 
+	/**
+	 * This method removes duplicate node from the list.
+	 */
 	public void removeDuplicates(LinkedListNode<Integer> llist) {
 		int data = Integer.MIN_VALUE;
 		LinkedListNode<Integer> head = new LinkedListNode<>(-1);
@@ -153,6 +156,42 @@ public class LinkedList<T> {
 			}
 		}
 		printList();
+	}
+
+	/**
+	 * This method checks whether it is cyclic linkedlist.
+	 */
+	public boolean checkIfCyclic(LinkedListNode<Integer> llist) {
+		if (llist == null || llist.next == null) {
+			return false;
+		}
+		LinkedListNode<Integer> head = llist;
+		LinkedListNode<Integer> tail = head.next;
+		while (head != tail) {
+			if (tail == null || tail.next == null) {
+				return false;
+			}
+			head = head.next;
+			tail = tail.next.next;
+		}
+		return true;
+	}
+
+	/**
+	 * This method reverse a linkedlist.
+	 */
+	public LinkedListNode<Integer>  reverse(LinkedListNode<Integer> head) {
+		LinkedListNode<Integer> prev = null;
+		LinkedListNode<Integer> current = head;
+		LinkedListNode<Integer> next = null;
+		while (current != null) {
+			next = current.next;
+			current.next= prev;
+			prev = current;
+			current = next;
+		}
+		head = prev;
+		return head;
 	}
 }
 

@@ -13,6 +13,13 @@ import com.basic.dev.behavioral.strategy.ShoppingCart;
 /* When to use the Strategy design pattern in Java?
  * Strategy pattern is used when we have multiple algorithm for a specific task and client decides the actual 
  * implementation to be used at runtime.
+ * 
+ * In Strategy pattern we create an abstraction, which is an interface through which clients interact with our system. 
+ * Behind the abstraction we create multiple implementation of same interface with different algorithms.
+ * 
+ * The main difference is that in State pattern internal state of an Object is one of the determining factors for selecting the
+ * Strategy for change of state. Where as in Strategy pattern, client can pass some external parameter in input during method invocation that determines the
+ * strategy to be used at run time. Therefore State pattern is based on the Object’s internal state, where as Strategy pattern is based on Client’s invocation.
  */
 /*
  * Examples :

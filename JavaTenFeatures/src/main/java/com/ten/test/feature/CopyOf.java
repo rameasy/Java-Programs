@@ -3,7 +3,6 @@ package com.ten.test.feature;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 /**
  * This class demonstrates the Java 10 feature: copyOf static method in

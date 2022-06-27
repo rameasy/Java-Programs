@@ -117,6 +117,24 @@ public class CircularLinkedList<T> {
 		return count;
 	}
 
+	/**
+	 * This method checks whether it is cyclic linkedlist.
+	 */
+	public boolean checkIfCyclic(CircularLinkedListNode<Integer> llist) {
+		if (llist == null || llist.next == null) {
+			return false;
+		}
+		CircularLinkedListNode<Integer> head = llist;
+		CircularLinkedListNode<Integer> tail = head.next;
+		while (head != tail) {
+			if (tail == null || tail.next == null) {
+				return false;
+			}
+			head = head.next;
+			tail = tail.next.next;
+		}
+		return true;
+	}
 }
 
 /**

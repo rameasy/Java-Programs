@@ -15,31 +15,32 @@ import java.util.Set;
  *
  * 
  */
-public class Permutations {
+public class PermutationStrings {
+
+	private PermutationStrings() {
+
+	}
 
 	public static List<String> singlePermutations(String s) {
 		Set<String> permutations = new HashSet<>();
 		if (s.length() == 0) {
 			permutations.add("");
-            return new ArrayList<>(permutations);
-        }
+			return new ArrayList<>(permutations);
+		}
 		char initialChar = s.charAt(0);
 		String remainingString = s.substring(1);
 		List<String> words = singlePermutations(remainingString);
 		for (String word : words) {
-            for (int i = 0;i<=word.length();i++){
-                permutations.add(swapStrings(word, initialChar, i));
-            }
-        }
+			for (int i = 0; i <= word.length(); i++) {
+				permutations.add(swapStrings(word, initialChar, i));
+			}
+		}
 		return new ArrayList<>(permutations);
 	}
+
 	public static String swapStrings(String str, char c, int j) {
-        String begin = str.substring(0, j);
-        String end = str.substring(j);
-        return begin + c + end;
-    }
-
-	public static void main(String args[]) {
-
+		String begin = str.substring(0, j);
+		String end = str.substring(j);
+		return begin + c + end;
 	}
 }

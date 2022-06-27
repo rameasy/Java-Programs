@@ -70,4 +70,54 @@ public class SortedLinkedList {
 		count++;
 		return count;
 	}
+
+	/**
+	 * This method merge the two sorted linked list.
+	 */
+	public LinkedListNode<Integer> merge(LinkedListNode<Integer> list1, LinkedListNode<Integer> list2) {
+		LinkedListNode<Integer> dummyNode = new LinkedListNode<>(0);
+		LinkedListNode<Integer> currNode = dummyNode;
+		while (list1 != null || list2 != null) {
+			int temp = 0;
+			if (list1 != null && list2 != null) {
+				if (list1.data < list2.data) {
+					temp = list1.data;
+					list1 = list1.next;
+				} else {
+					temp = list2.data;
+					list2 = list2.next;
+				}
+			} else if (list1 != null) {
+				temp = list1.data;
+				list1 = list1.next;
+			} else {
+				temp = list2.data;
+				list2 = list2.next;
+			}
+			currNode.next = new LinkedListNode<>(temp);
+			currNode = currNode.next;
+		}
+		return dummyNode.next;
+	}
+
+	/**
+	 * This method merge the two sorted linked list in recursion.
+	 */
+	public LinkedListNode<Integer> mergeTwoLists(LinkedListNode<Integer> list1, LinkedListNode<Integer> list2) {
+		if (list1 == null)
+			return list2;
+		if (list2 == null)
+			return list1;
+
+		if (list1.data < list2.data) {
+			list1.next = mergeTwoLists(list1.next, list2);
+			return list1;
+		}
+
+		else {
+			list2.next = mergeTwoLists(list1, list2.next);
+			return list2;
+		}
+
+	}
 }

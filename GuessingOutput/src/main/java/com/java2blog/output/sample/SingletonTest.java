@@ -1,4 +1,4 @@
-package com.java2blog.output.guessing;
+package com.java2blog.output.sample;
 
 public class SingletonTest {
 	private volatile SingletonTest singletonTest;

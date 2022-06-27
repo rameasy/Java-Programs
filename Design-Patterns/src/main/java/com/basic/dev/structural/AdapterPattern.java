@@ -13,7 +13,12 @@ import com.basic.dev.structural.adapter.MovableAdapterImpl;
  */
 
 /* When to use the Adapter design pattern in Java?
- * The adapter pattern is often used to make existing classes work with others without modifying their source code. 
+ * If we have two classes with incompatible interfaces, we use Adapter pattern to make it work. We create an Adapter object that
+ * can adapt the interface of one class to another class.
+ * 
+ * Adapter vs Proxy
+ *  Adapter pattern provides a different interface to an object. But the Proxy always provides same interface to the object.
+ *  Adapter is like providing an interface suitable to client’s use. But Proxy is same interface that has additional feature or check.
  */
 /*
  * Examples:

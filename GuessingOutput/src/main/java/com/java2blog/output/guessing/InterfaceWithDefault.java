@@ -4,4 +4,5 @@ public interface InterfaceWithDefault {
 	public default void test() {
 		System.out.println("Inside test");
 	}
+	public abstract void testMethod();
 }

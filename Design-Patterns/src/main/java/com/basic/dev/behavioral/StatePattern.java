@@ -11,6 +11,11 @@ import com.basic.dev.behavioral.state.SmartTvSwitchOnState;
 /* When to use the State design pattern in Java?
  * In any application, when we are dealing with an object which can be in different states during it’s life-cycle and 
  * how it processes incoming requests (or make state transitions) based on it’s present state – we can use the state pattern.
+ * 
+ * The main difference is that in State pattern internal state of an Object is one of the determining factors for selecting the
+ * Strategy for change of state. Where as in Strategy pattern, client can pass some external parameter in input during method invocation that determines the
+ * strategy to be used at run time. Therefore State pattern is based on the Object’s internal state, where as Strategy pattern is based on Client’s invocation.
+
  */
 /*
  * Examples : Java thread states

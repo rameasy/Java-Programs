@@ -11,7 +11,6 @@ public class DRoot {
 				if(n / 10 == 0) {
 					break;	
 				}
-				
 			} else {
 				break;
 			}
