@@ -18,7 +18,7 @@ public class CalculateStockSpan {
 	}
 
 	public static void main(String[] args) {
-		int[] priceInput = { 100, 80, 60, 70, 60, 75, 85 };
+		int[] priceInput = { 2,4,1 };
 		int[] priceOutput = calculateSpan(priceInput);
 		printOutput(priceOutput);
 		int[] priceInput1 = { 10, 4, 5, 90, 120, 80 };

@@ -37,4 +37,20 @@ public class BinaryTree {
 		}
 		return compareTwoTreeData(tree1.left, tree2.left) && compareTwoTreeData(tree1.right, tree2.right);
 	}
+
+	/**
+	 * This method checks whether tree is symmetric or not.
+	 * 
+	 * @param tree1
+	 * @param tree2
+	 * @return
+	 */
+	public boolean isSymmetric(TreeNode tree1, TreeNode tree2) {
+		if (tree1 != null && tree2 != null && tree1.data.equals(tree2.data)) {
+			return isSymmetric(tree1.left, tree2.right) && isSymmetric(tree1.right, tree2.left);
+		} else {
+			return (tree1 == null && tree2 == null);
+		}
+
+	}
 }

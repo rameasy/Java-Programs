@@ -59,6 +59,6 @@ public class Atoi {
 		int expected = 105;
 		String input = "" + expected;
 		System.out.println(convertToInt(input));
-		System.out.println(myAtoiRecursive(input, 3));
+		System.out.println(myAtoiRecursive(input, input.length()));
 	}
 }

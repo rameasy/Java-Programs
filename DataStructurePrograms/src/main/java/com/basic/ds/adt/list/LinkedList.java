@@ -141,20 +141,18 @@ public class LinkedList<T> {
 	 * This method removes duplicate node from the list.
 	 */
 	public void removeDuplicates(LinkedListNode<Integer> llist) {
-		int data = Integer.MIN_VALUE;
-		LinkedListNode<Integer> head = new LinkedListNode<>(-1);
-		LinkedListNode<Integer> prev = null;
-		head.next = llist;
-		while (head != null) {
-			if (head.data == data) {
-				prev.next = head.next;
-				head = llist.next;
-			} else {
-				prev = head;
-				data = head.data;
-				head = head.next;
+		LinkedListNode<Integer> out = new LinkedListNode<>(-1);
+		LinkedListNode<Integer> t = out;
+
+		while (llist != null) {
+			while (llist.next != null && llist.data == llist.next.data) {
+				llist = llist.next;
 			}
+			t.next = new LinkedListNode(llist.data);
+			t = t.next;
+			llist = llist.next;
 		}
+		this.node = (LinkedListNode<T>) out.next;
 		printList();
 	}
 
@@ -180,18 +178,45 @@ public class LinkedList<T> {
 	/**
 	 * This method reverse a linkedlist.
 	 */
-	public LinkedListNode<Integer>  reverse(LinkedListNode<Integer> head) {
+	public LinkedListNode<Integer> reverse(LinkedListNode<Integer> head) {
 		LinkedListNode<Integer> prev = null;
 		LinkedListNode<Integer> current = head;
 		LinkedListNode<Integer> next = null;
 		while (current != null) {
 			next = current.next;
-			current.next= prev;
+			current.next = prev;
 			prev = current;
 			current = next;
 		}
 		head = prev;
 		return head;
+	}
+
+	/**
+	 * This method add the numbers in two linkedlists.
+	 */
+	public LinkedListNode<Integer> addTwoLists(LinkedListNode<Integer> list1, LinkedListNode<Integer> list2) {
+		LinkedListNode<Integer> dummy = new LinkedListNode<>(0);
+		LinkedListNode<Integer> head1 = list1;
+		LinkedListNode<Integer> head2 = list2;
+		LinkedListNode<Integer> resultList = dummy;
+		int carry = 0;
+		while (head1 != null || head2 != null) {
+			int sum = (head1 != null ? head1.data : 0) + (head2 != null ? head2.data : 0) + carry;
+			carry = sum / 10;
+			resultList.next = new LinkedListNode(sum % 10);
+			if(head1 != null) {
+				head1 = head1.next;
+			}
+			if(head2 != null) {
+				head2 = head2.next;
+			}
+			resultList = resultList.next;
+		}
+		if(carry > 0 ) {
+			resultList.next = new LinkedListNode(carry);	
+		}
+		return dummy.next;
 	}
 }
 

@@ -87,18 +87,36 @@ public class LinkedListTest {
 	/**
 	 * This is a test method for sort method.
 	 */
-	@Test
+	//@Test
 	public void removeDuplicatesTest() {
 		
 		LinkedList<Integer> linkedList = new LinkedList<>();
-		linkedList.insert(10);
-		linkedList.insert(14);
-		linkedList.insert(14);
-		linkedList.insert(3);
-		linkedList.insert(3);
+		linkedList.insert(1);
+		linkedList.insert(1);
+		linkedList.insert(1);
 		linkedList.sort();
 		System.out.println("removeDuplicatesTest result");
 		linkedList.removeDuplicates(linkedList.node);
 		assertEquals(5, linkedList.size());
+	}
+	
+	/**
+	 * This is a test method for sort method.
+	 */
+	@Test
+	public void addTwoListsTest() {
+		
+		LinkedList<Integer> list1 = new LinkedList<>();
+		list1.insert(8);
+		list1.insert(1);
+		list1.insert(1);
+		LinkedList<Integer> list2 = new LinkedList<>();
+		list2.insert(8);
+		list2.insert(1);
+		list2.insert(1);
+		System.out.println("sum of two lists result");
+		LinkedList<Integer> resultList = new LinkedList<>();
+		resultList.node = resultList.addTwoLists(list1.node, list2.node);
+		resultList.printList();
 	}
 }

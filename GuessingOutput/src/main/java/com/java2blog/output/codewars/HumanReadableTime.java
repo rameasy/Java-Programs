@@ -5,7 +5,7 @@ public class HumanReadableTime {
 		String hours = String.format("%02d", seconds / 3600);
 		String minutes = String.format("%02d", (seconds / 60) % 60);
 		String second = String.format("%02d", (seconds % 60));
-
+		System.out.println(seconds / 3600 + " = " + (seconds / 60) % 60 + " = " + (seconds % 60) );
 		return hours + ":" + minutes + ":" + second;
 	}
 
