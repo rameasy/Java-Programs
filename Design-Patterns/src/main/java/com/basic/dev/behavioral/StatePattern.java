@@ -21,9 +21,19 @@ import com.basic.dev.behavioral.state.SmartTvSwitchOnState;
  * Examples : Java thread states
  * 
  */
+/*
+ * Pros:
+ * The State pattern minimizes conditional complexity, eliminating the need for if and switch statements in objects 
+ * that have different behavior requirements unique to different state transitions.
+ * 
+ * Cons: 
+ * The State pattern requires a lot of code to be written. Depending on how many different state transition 
+ * methods are defined, and how many possible states an object can be in, there can quickly be dozens or more 
+ * different methods that must be written. 
+ */
 //https://examples.javacodegeeks.com/core-java/java-state-design-pattern-example/
 public class StatePattern {
-	public static void main(String args[]) {
+	public static void main(String[] args) {
 		SmartTv smartTv = new SmartTv();
 		SmartTvState smartTvSwitchOnState = new SmartTvSwitchOnState();
 		SmartTvState smartTvSwitchOffState = new SmartTvSwitchOffState();

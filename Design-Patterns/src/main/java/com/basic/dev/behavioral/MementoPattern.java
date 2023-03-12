@@ -16,6 +16,15 @@ import com.basic.dev.behavioral.memento.TextWindow;
 /*
  * Examples :
  * javax.swing.text.JTextComponent
+ * 
+ * Pros:
+ * The most important benefit of this memento design pattern is that you always have the ability to discard the unessential changes and restore them to a stable state..
+ * Easy recovery techniques are provided by this pattern.
+ * The Memento design pattern conserves encapsulation boundaries.
+ * 
+ * Cons:
+ * The application will consume a huge amount of RAM if the user creates mementos many times.
+ * The extra time to save the states will reduce the overall performance of the application.
  */
 //https://www.baeldung.com/java-memento-design-pattern
 public class MementoPattern {

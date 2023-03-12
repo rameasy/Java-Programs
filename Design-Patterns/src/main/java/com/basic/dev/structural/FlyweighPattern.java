@@ -26,7 +26,17 @@ import com.basic.dev.structural.flyweigh.PenFactory;
  * A pen will be distinguished by its refill color only, nothing else. All application modules which need to access 
  * a red pen – can use the same instance of red pen (shared object). 
  * Only when a different color pen is needed, application module will ask for another pen from flyweight factory.
-*/
+ * 
+ * Pros:
+ * The Flyweight Pattern contributes to improving the performance of the application by reducing the number of objects.
+ * The Flyweight Pattern reduces the memory footprint and saving RAM as the common properties are shared between objects using Intrinsic properties.
+ * 
+ * Cons:
+ * If there are no shareable properties in an object, the pattern is of no use.
+ * If memory is not a concern, implementing Flyweight design can be overkill for the application.
+ * The pattern introduces code complexity.
+ *
+ */
 public class FlyweighPattern {
 	public static void main(String args[]) {
 		Pen yellowThinPen1 = PenFactory.getThickPen("YELLOW"); // created new pen

@@ -20,6 +20,18 @@ import com.basic.dev.structural.decorator.Garland;
  * java.util.Collections, methods checkedXXX(), synchronizedXXX() and unmodifiableXXX().
  * javax.servlet.http.HttpServletRequestWrapper and HttpServletResponseWrapper
  * 
+ * Pros:
+ * High degree of flexibility
+ * Expansion of function of classes without inheritance
+ * Readable program code
+ * Resource-optimised functionalities
+ * 
+ * Cons:
+ * High complexity of software
+ * Not beginner-friendly
+ * High number of Objects
+ * Difficult debugging process
+ * 
  */
 public class DecoratorPattern {
 	public static void main(String args[]) {

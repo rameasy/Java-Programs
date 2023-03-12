@@ -25,6 +25,15 @@ import com.basic.dev.behavioral.strategy.ShoppingCart;
  * Examples :
  * One of the best example of strategy pattern is Collections.sort() method that takes Comparator parameter. 
  * Based on the different implementations of Comparator interfaces, the Objects are getting sorted in different ways.
+ * 
+ * Pros: 
+ * Prevents the conditional statements. (switch, if, else…)
+ * The algorithms are loosely coupled with the context entity. They can be changed/replaced without changing the context entity.
+ * Very easy extendable.
+ * 
+ * Cons:
+ * Clients must know existence of different strategies and a client must understand how the Strategies differ.
+ * It increases the number of objects in the application.
  */
 public class StrategyPattern {
 	public static void main(String args[]) {
