@@ -2,7 +2,7 @@ package com.java2blog.output.leetcode;
 
 public class NonRepeatingCharacter {
 	static final int NO_OF_CHARS = 256;
-	static char count[] = new char[NO_OF_CHARS];
+	static char[] count = new char[NO_OF_CHARS];
 
 	/*
 	 * calculate count of characters in the passed string

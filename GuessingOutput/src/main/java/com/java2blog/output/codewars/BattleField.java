@@ -10,43 +10,42 @@ public class BattleField {
 	int battleshipCount = 0;
 	int cruiseCount = 0;
 	int destroyersCount = 0;
-	public static boolean fieldValidator(int[][] field) {
+	public boolean fieldValidator(int[][] field) {
 		BattleField bf = new BattleField();
 		boolean visitedCell[][] = new boolean[field.length][field.length];
 		for (int i = 0; i < field.length; i++) {
 			for (int j = 0; j < field.length; j++) {
 				if (visitedCell[i][j] == false) {
-					validateShipExistence(field, i, j, visitedCell, bf);
+					validateShipExistence(field, i, j, visitedCell);
 				}
 			}
 		}
-		System.out.println(bf.battleshipCount);
-		System.out.println(bf.cruiseCount);
-		System.out.println(bf.destroyersCount);
-		System.out.println(bf.submarineCount);
+		System.out.println(battleshipCount);
+		System.out.println(cruiseCount);
+		System.out.println(destroyersCount);
+		System.out.println(submarineCount);
 		System.out.println();
 		
-		if (bf.battleshipCount == TOTAL_BATTLESHIP_COUNT && bf.cruiseCount == TOTAL_CRUISER_COUNT
-				&& bf.destroyersCount == TOTAL_DESTROYERS_COUNT && bf.submarineCount == TOTAL_SUBMARINE_COUNT) {
+		if (battleshipCount == TOTAL_BATTLESHIP_COUNT && cruiseCount == TOTAL_CRUISER_COUNT
+				&& destroyersCount == TOTAL_DESTROYERS_COUNT && submarineCount == TOTAL_SUBMARINE_COUNT) {
 			return true;
 		}
 		return false;
 	}
 
-	private static void validateShipExistence(int[][] field, int i, int j, boolean[][] visitedCell,
-			BattleField bf) {
+	private void validateShipExistence(int[][] field, int i, int j, boolean[][] visitedCell) {
 		if (checkForBattleship(field, i, j, visitedCell)) {
-			bf.battleshipCount++;
+			battleshipCount++;
 		} else if (checkForCruiser(field, i, j, visitedCell)) {
-			bf.cruiseCount++;
+			cruiseCount++;
 		} else if (checkForDestroyer(field, i, j, visitedCell)) {
-			bf.destroyersCount++;
+			destroyersCount++;
 		} else if (checkForSubmarine(field, i, j, visitedCell)) {
-			bf.submarineCount++;
+			submarineCount++;
 		}
 	}
 
-	private static boolean checkForSubmarine(int[][] field, int i, int j, boolean[][] visitedCell) {
+	private boolean checkForSubmarine(int[][] field, int i, int j, boolean[][] visitedCell) {
 		if (field[i][j] == 1) {
 			visitedCell[i][j] = true;
 			return true;
@@ -57,7 +56,7 @@ public class BattleField {
 		return false;
 	}
 
-	private static boolean checkForDestroyer(int[][] field, int i, int j, boolean[][] visitedCell) {
+	private boolean checkForDestroyer(int[][] field, int i, int j, boolean[][] visitedCell) {
 		if (visitedCell.length > i + 1) {
 			if (field[i][j] == 1 && field[i + 1][j] == 1) {
 				visitedCell[i][j] = true;
@@ -75,7 +74,7 @@ public class BattleField {
 		return false;
 	}
 
-	private static boolean checkForCruiser(int[][] field, int i, int j, boolean[][] visitedCell) {
+	private boolean checkForCruiser(int[][] field, int i, int j, boolean[][] visitedCell) {
 		if (visitedCell.length > i + 2) {
 			if (field[i][j] == 1 && field[i + 1][j] == 1 && field[i + 2][j] == 1) {
 				visitedCell[i][j] = true;
@@ -95,7 +94,7 @@ public class BattleField {
 		return false;
 	}
 
-	private static boolean checkForBattleship(int[][] field, int i, int j, boolean[][] visitedCell) {
+	private boolean checkForBattleship(int[][] field, int i, int j, boolean[][] visitedCell) {
 		if (visitedCell.length > i + 3) {
 			if (field[i][j] == 1 && field[i + 1][j] == 1 && field[i + 2][j] == 1 && field[i + 3][j] == 1) {
 				visitedCell[i][j] = true;

@@ -51,9 +51,11 @@ public class BattleFieldTests {
 		  {0, 0, 1, 1, 0, 0, 0, 0, 0, 0}};
     @Test
     public void SampleTest() {
-        assertEquals(true, BattleField.fieldValidator(battleField));
+    	BattleField bf1 = new BattleField();
+        assertEquals(true, bf1.fieldValidator(battleField));
         //assertEquals(false, BattleField.fieldValidator(battleField1));
         //assertEquals(true, BattleField.fieldValidator(battleField2));
-        assertEquals(false, BattleField.fieldValidator(battleField3));
+        BattleField bf2 = new BattleField();
+        assertEquals(false, bf2.fieldValidator(battleField3));
     }
 }

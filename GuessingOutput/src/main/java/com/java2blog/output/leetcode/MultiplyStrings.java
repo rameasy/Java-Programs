@@ -31,5 +31,6 @@ public class MultiplyStrings {
 	public static void main(String[] args) {
 		System.out.println(new MultiplyStrings().multiply("3", "6"));
 		System.out.println(new MultiplyStrings().multiply("123", "456"));
+		System.out.println(new MultiplyStrings().multiply("99", "99"));
 	}
 }

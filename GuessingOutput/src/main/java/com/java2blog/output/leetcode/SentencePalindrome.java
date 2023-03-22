@@ -7,14 +7,11 @@ public class SentencePalindrome {
 	}
 
 	public static boolean isPalindrome(String s) {
-		if(s == null || s.trim().length() == 0) {
+		if (s == null || s.trim().length() == 0) {
 			return false;
 		}
 		s = s.toLowerCase().replaceAll("[^a-zA-Z0-9]", "");
 		StringBuilder sb = new StringBuilder(s);
-		if (s.equals(sb.reverse().toString())) {
-			return true;
-		}
-		return false;
+		return s.equals(sb.reverse().toString());
 	}
 }

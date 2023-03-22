@@ -17,7 +17,7 @@ public class RomanToInteger {
 		}
 		return s.toString();
 	}
-	public int romanToInt(String s) {
+	public static int romanToInt(String s) {
 		int result = 0;
 		char previous = ' ';
 		for (int i = 0; i < s.length(); i++) {
@@ -53,9 +53,8 @@ public class RomanToInteger {
 	}
 
 	public static void main(String args[]) {
-		int[] values = {1000,900,500,400,100,90,50,40,10,9,5,4,1};
-		System.out.println(new RomanToInteger().romanToInt("CCXXIV"));
-		System.out.println(integerToRoman2(123));
+		System.out.println(romanToInt("CCXXIV"));
+		System.out.println(integerToRoman2(820));
 	}
 	
 }
