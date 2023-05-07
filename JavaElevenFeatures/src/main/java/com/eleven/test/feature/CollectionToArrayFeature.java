@@ -9,7 +9,7 @@ import java.util.List;
  * @author rameasy@gmail.com
  */
 public class CollectionToArrayFeature {
-	public static void main(String[] args) {
+	public final static void main(String[] args) {
 		List<String> sampleStringList = Arrays.asList("Java", "Kotlin");
 		String[] sampleStringArray = sampleStringList.toArray(String[]::new);
 		System.out.println(sampleStringArray.length);
@@ -28,5 +28,9 @@ public class CollectionToArrayFeature {
 		for (Integer sample : sampleIntegerArray) {
 			System.out.println(sample);
 		}
+		
+		String s1 = "ABCD";
+		String s2 = "ABCD";
+		System.out.println(s1.equals(s2) + " " + s1.hashCode() + " " + s2.hashCode());
 	}
 }

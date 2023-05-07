@@ -10,13 +10,13 @@ import java.io.InputStreamReader;
  * 
  * @author rameasy@gmail.com
  */
-public class TryWithResourceFeature {
+public class TryWithResourceFeature implements AutoCloseable {
 
 	public static void main(String[] args) throws IOException {
 		TryWithResourceFeature tryWithResourceFeature = new TryWithResourceFeature();
 		BufferedReader reader1 = new BufferedReader(
 				new InputStreamReader(tryWithResourceFeature.getClass().getResourceAsStream("testme.txt")));
-		try (reader1) {
+		try (tryWithResourceFeature) {
 			while (reader1.readLine() != null) {
 				System.out.println(reader1.readLine());
 			}
@@ -24,6 +24,11 @@ public class TryWithResourceFeature {
 			e.printStackTrace();
 		}
 
+	}
+
+	@Override
+	public void close() {
+		//test method
 	}
 
 }
